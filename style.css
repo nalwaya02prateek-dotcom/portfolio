@@ -1,7 +1,17 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    height:auto;
 }
 body{
     background: linear-gradient(
@@ -99,7 +109,28 @@ section{
     padding:100px 80px;
     background:transparent;
 }
+.profile-card{
+    width:350px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0px 10px 30px rgba(0,0,0,0.3);
 
+    transition:0.4s;
+}
+
+.profile-card img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:20px;
+}
+.profile-card:hover{
+    transform:translateY(-15px);
+    box-shadow:0px 20px 40px rgba(0,0,0,0.4);
+}
 .about-container{
     display:flex;
     align-items:center;
@@ -351,6 +382,7 @@ section{
     transition:0.3s;
 }
 
+
 .contact-card:hover{
     transform:translateY(-10px);
 }
@@ -402,23 +434,39 @@ img{
 }
 
 
-/* ===========================
-   Mobile Devices (768px and below)
-=========================== */
+/* =========================
+   Mobile Devices
+========================= */
 
 @media (max-width:768px){
 
     /* Navbar */
 
     #navbar{
+        display:flex;
         flex-direction:column;
-        padding:20px;
+        align-items:center;
+        justify-content:center;
+        padding:15px;
+        gap:15px;
         height:auto;
-        gap:20px;
     }
 
     .logo{
-        justify-content:center;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:10px;
+    }
+
+    .logo img{
+        width:70px;
+        height:70px;
+    }
+
+    .name{
+        font-size:24px;
+        text-align:center;
     }
 
     .nav-links{
@@ -432,96 +480,116 @@ img{
         font-size:18px;
     }
 
-    .name{
-        font-size:28px;
-    }
-
 
     /* Sections */
 
     section{
-        padding:80px 30px;
+        padding:80px 20px;
     }
 
 
     /* About Section */
 
     .about-container{
+        display:flex;
         flex-direction:column;
+        align-items:center;
         text-align:center;
+        gap:40px;
     }
 
-    .about-image img{
-        width:250px;
-        height:250px;
+    .profile-card{
+        width:90%;
+        max-width:350px;
+        margin:auto;
+    }
+
+    .profile-card img{
+        width:220px;
+        height:220px;
+        object-fit:cover;
     }
 
     .about-content h1{
-        font-size:40px;
+        font-size:50px;
     }
 
     .about-content p{
-        font-size:18px;
+        font-size:20px;
+        line-height:1.8;
     }
+
+
+    /* About Cards */
 
     .about-cards{
+        display:grid;
         grid-template-columns:1fr;
+        gap:25px;
     }
 
 
-    /* Project Section */
+    /* Projects */
+
+    .project-container{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:25px;
+    }
 
     .project-card{
-        flex-direction:column;
+        width:100%;
     }
 
     .project-card img{
         width:100%;
-    }
-
-    .project-heading{
-        font-size:40px;
+        height:auto;
     }
 
 
-    /* Certificate Section */
-
-    .certificate-heading{
-        font-size:40px;
-    }
+    /* Certificates */
 
     .certificate-container{
+        display:grid;
         grid-template-columns:1fr;
+        gap:25px;
     }
 
 
     /* Resume Buttons */
 
     .resume-buttons{
+        display:flex;
         flex-direction:column;
         align-items:center;
+        gap:20px;
     }
 
 
-    /* Contact Section */
+    /* Contact */
 
     .contact-container{
+        display:grid;
         grid-template-columns:1fr;
+        justify-items:center;
+        gap:25px;
     }
 
-    #contact h1{
-        font-size:40px;
+    .contact-card{
+        width:260px;
+        height:220px;
     }
 
 
     /* Footer */
 
     footer{
+        padding:20px;
+        text-align:center;
         font-size:16px;
-        padding:15px;
     }
-}
 
+}
 
 
 /* ===========================
@@ -531,7 +599,7 @@ img{
 @media (max-width:480px){
 
     .name{
-        font-size:22px;
+        font-size:20px;
     }
 
     .nav-links a{
@@ -539,23 +607,16 @@ img{
     }
 
     h1{
-        font-size:32px !important;
+        font-size:38px !important;
     }
 
     p{
-        font-size:16px !important;
+        font-size:18px !important;
     }
 
-    .about-image img{
-        width:200px;
-        height:200px;
-    }
-
-    .card,
-    .project-card,
-    .certificate-card,
-    .contact-card{
-        padding:20px;
+    .profile-card img{
+        width:180px;
+        height:180px;
     }
 
 }
